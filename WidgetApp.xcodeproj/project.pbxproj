@@ -6,14 +6,66 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EBE7B7752D931B2400CB538B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE7B7742D931B2400CB538B /* WidgetKit.framework */; };
+		EBE7B7772D931B2400CB538B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE7B7762D931B2400CB538B /* SwiftUI.framework */; };
+		EBE7B7882D931B2600CB538B /* AffirmationWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EBE7B7722D931B2400CB538B /* AffirmationWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EBE7B7862D931B2600CB538B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBE7B7552D931A6D00CB538B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBE7B7712D931B2400CB538B;
+			remoteInfo = AffirmationWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EBE7B78D2D931B2600CB538B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EBE7B7882D931B2600CB538B /* AffirmationWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		EBE7B75D2D931A6D00CB538B /* WidgetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WidgetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBE7B7722D931B2400CB538B /* AffirmationWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AffirmationWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBE7B7742D931B2400CB538B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		EBE7B7762D931B2400CB538B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		EBE7B7A32D9356A400CB538B /* AffirmationWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AffirmationWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		EBE7B7892D931B2600CB538B /* Exceptions for "AffirmationWidget" folder in "AffirmationWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = EBE7B7712D931B2400CB538B /* AffirmationWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		EBE7B75F2D931A6D00CB538B /* WidgetApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = WidgetApp;
+			sourceTree = "<group>";
+		};
+		EBE7B7782D931B2400CB538B /* AffirmationWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				EBE7B7892D931B2600CB538B /* Exceptions for "AffirmationWidget" folder in "AffirmationWidgetExtension" target */,
+			);
+			path = AffirmationWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,13 +78,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBE7B76F2D931B2400CB538B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBE7B7772D931B2400CB538B /* SwiftUI.framework in Frameworks */,
+				EBE7B7752D931B2400CB538B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		EBE7B7542D931A6D00CB538B = {
 			isa = PBXGroup;
 			children = (
+				EBE7B7A32D9356A400CB538B /* AffirmationWidgetExtension.entitlements */,
 				EBE7B75F2D931A6D00CB538B /* WidgetApp */,
+				EBE7B7782D931B2400CB538B /* AffirmationWidget */,
+				EBE7B7732D931B2400CB538B /* Frameworks */,
 				EBE7B75E2D931A6D00CB538B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +105,18 @@
 			isa = PBXGroup;
 			children = (
 				EBE7B75D2D931A6D00CB538B /* WidgetApp.app */,
+				EBE7B7722D931B2400CB538B /* AffirmationWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EBE7B7732D931B2400CB538B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBE7B7742D931B2400CB538B /* WidgetKit.framework */,
+				EBE7B7762D931B2400CB538B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +129,12 @@
 				EBE7B7592D931A6D00CB538B /* Sources */,
 				EBE7B75A2D931A6D00CB538B /* Frameworks */,
 				EBE7B75B2D931A6D00CB538B /* Resources */,
+				EBE7B78D2D931B2600CB538B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EBE7B7872D931B2600CB538B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				EBE7B75F2D931A6D00CB538B /* WidgetApp */,
@@ -69,6 +145,28 @@
 			productName = WidgetApp;
 			productReference = EBE7B75D2D931A6D00CB538B /* WidgetApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EBE7B7712D931B2400CB538B /* AffirmationWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBE7B78A2D931B2600CB538B /* Build configuration list for PBXNativeTarget "AffirmationWidgetExtension" */;
+			buildPhases = (
+				EBE7B76E2D931B2400CB538B /* Sources */,
+				EBE7B76F2D931B2400CB538B /* Frameworks */,
+				EBE7B7702D931B2400CB538B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EBE7B7782D931B2400CB538B /* AffirmationWidget */,
+			);
+			name = AffirmationWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = AffirmationWidgetExtension;
+			productReference = EBE7B7722D931B2400CB538B /* AffirmationWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +179,9 @@
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					EBE7B75C2D931A6D00CB538B = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					EBE7B7712D931B2400CB538B = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -100,12 +201,20 @@
 			projectRoot = "";
 			targets = (
 				EBE7B75C2D931A6D00CB538B /* WidgetApp */,
+				EBE7B7712D931B2400CB538B /* AffirmationWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EBE7B75B2D931A6D00CB538B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBE7B7702D931B2400CB538B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +231,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBE7B76E2D931B2400CB538B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EBE7B7872D931B2600CB538B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBE7B7712D931B2400CB538B /* AffirmationWidgetExtension */;
+			targetProxy = EBE7B7862D931B2600CB538B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		EBE7B7692D931A6D00CB538B /* Debug */ = {
@@ -300,6 +424,62 @@
 			};
 			name = Release;
 		};
+		EBE7B78B2D931B2600CB538B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = AffirmationWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WHU9SYLDM6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AffirmationWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AffirmationWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SaulMachuca.WidgetApp.AffirmationWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBE7B78C2D931B2600CB538B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = AffirmationWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WHU9SYLDM6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AffirmationWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AffirmationWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SaulMachuca.WidgetApp.AffirmationWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -317,6 +497,15 @@
 			buildConfigurations = (
 				EBE7B76C2D931A6D00CB538B /* Debug */,
 				EBE7B76D2D931A6D00CB538B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBE7B78A2D931B2600CB538B /* Build configuration list for PBXNativeTarget "AffirmationWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBE7B78B2D931B2600CB538B /* Debug */,
+				EBE7B78C2D931B2600CB538B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

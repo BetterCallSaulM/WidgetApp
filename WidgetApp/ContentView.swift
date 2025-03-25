@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
     
@@ -13,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: "quote.bubble.fill")
+            Image("b")
                 .imageScale(.large)
                 .foregroundStyle(.blue)
             Text(affirmation)
@@ -27,6 +28,10 @@ struct ContentView: View {
         }
     }
     
+    func refreshWidget() {
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+    
     func getAffirmation() async {
         let url = URL(string: "https://www.affirmations.dev/?ref=freepublicapis.com")!
         
@@ -34,10 +39,11 @@ struct ContentView: View {
             let (data, _) = try await URLSession.shared.data(from: url)
             let decodedResponse = try JSONDecoder().decode(Affirmation.self, from: data)
             
-            let sharedDefaults = UserDefaults(suiteName: "group.SaulMachuca.WidgetApp.Affirmatio")
+            let sharedDefaults = UserDefaults(suiteName: "group.com.SaulMachuca.affirmations")
             sharedDefaults?.set(decodedResponse.affirmation, forKey: "currentAffirmation")
             
             affirmation = decodedResponse.affirmation
+            refreshWidget()
         } catch {
             print("Error: \(error.localizedDescription)")
         }

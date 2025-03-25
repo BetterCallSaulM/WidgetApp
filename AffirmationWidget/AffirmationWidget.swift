@@ -14,35 +14,22 @@ struct Provider: AppIntentTimelineProvider {
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> AffirmationEntry {
-        let affirmation = await fetchAffirmation() ?? "Stay positive!"
+        let affirmation = getSavedAffirmation() ?? "Kys"
         return AffirmationEntry(date: Date(), affirmation: affirmation)
     }
 
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<AffirmationEntry> {
-        let affirmation = getSavedAffirmation() ?? "Keep going!"
+        let affirmation = getSavedAffirmation() ?? "Kys"
         let entry = AffirmationEntry(date: Date(), affirmation: affirmation)
 
-        // Refresh every hour
-        let nextUpdate = Calendar.current.date(byAdding: .hour, value: 1, to: Date())!
+        // Refresh every 3 hours (to ensure it keeps updating)
+        let nextUpdate = Calendar.current.date(byAdding: .hour, value: 3, to: Date())!
 
         return Timeline(entries: [entry], policy: .after(nextUpdate))
     }
-    
-    private func fetchAffirmation() async -> String? {
-        let url = URL(string: "https://www.affirmations.dev/")!
 
-        do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            let decodedResponse = try JSONDecoder().decode(Affirmation.self, from: data)
-            return decodedResponse.affirmation
-        } catch {
-            print("Error fetching affirmation: \(error.localizedDescription)")
-            return nil
-        }
-    }
-    
     private func getSavedAffirmation() -> String? {
-        let sharedDefaults = UserDefaults(suiteName: "group.SaulMachuca.WidgetApp.Affirmatio")
+        let sharedDefaults = UserDefaults(suiteName: "group.com.SaulMachuca.affirmations")
         return sharedDefaults?.string(forKey: "currentAffirmation")
     }
 }
@@ -56,7 +43,8 @@ struct AffirmationWidgetEntryView: View {
     var entry: AffirmationEntry
 
     var body: some View {
-        VStack {
+        HStack {
+            Image("b")
             Text(entry.affirmation)
                 .font(.headline)
                 .multilineTextAlignment(.center)
